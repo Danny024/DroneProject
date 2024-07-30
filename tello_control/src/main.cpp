@@ -113,6 +113,11 @@ class TelloControl : public rclcpp::Node
 			if(key == (int)('d')) {msg.angular.z = manual_speed;}
 
 			publisher_velocity->publish(msg);
+
+			// Stabilize manual control to avoid overshooting
+                        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+                        msg = geometry_msgs::msg::Twist(); // reset message to stop movement
+                        publisher_velocity->publish(msg);
 		}
 
 		void timerCallback()
