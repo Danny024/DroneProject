@@ -4,4 +4,4 @@ This is a code for my Drone Project using the DJI Tello Drone
 2. Real time 3D reconstruction for perception and planning
 3. Web APPlication Drone Control
 
-Code would be made fully available in 2 months
+Code would be made fully available soon
